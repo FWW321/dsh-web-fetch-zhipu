@@ -1,0 +1,52 @@
+{
+  "name": "@fww/dsh-web-fetch-zhipu",
+  "description": "Zhipu BigModel web fetch provider for DeepSeek Harness (dsh): delegated reader (web_reader MCP) behind a ctx.web WebFetchProvider — SSRF surface nil (fetch runs on Zhipu's network), with session handshake, Bearer auth, and per-fetch session auditing.",
+  "version": "0.1.0",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "zhipu",
+    "bigmodel",
+    "web-reader",
+    "web-fetch",
+    "fetch-provider",
+    "mcp",
+    "streamable-http"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FWW321/dsh-web-fetch-zhipu.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-settings": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-web": "^0.1.0-rc.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

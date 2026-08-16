@@ -1,0 +1,10 @@
+# The dsh-web-fetch-zhipu bundle patch.
+#
+# Inserts the Zhipu fetch provider into the profile. It must NOT re-define
+# rows owned by official bundle patches (e.g. dsh-base's `- id: web` /
+# `- id: tool-web` rows): duplicate ids inside the bundle group fail the
+# loader. The user's own profile patch layer (applied last) restates
+# `web.fetchProvider` and opens `tool-web.fetch` — see README.
+- insert:
+    - id: web-fetch-zhipu
+      name: '@fww/dsh-web-fetch-zhipu'
