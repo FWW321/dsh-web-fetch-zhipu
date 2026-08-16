@@ -58,8 +58,8 @@ nixdsh 消费(`webFetch`/`webFetchProviders` 同款选择器形态,缝对称)
 会话管理:initialize → `mcp-session-id` → `notifications/initialized`
 握手后 `tools/call`;会话缓存复用,key 变更或服务端丢弃时透明重握手。
 
-可观测:每次抓取记入发起 agent 会话,事件 `web/zhipu-fetch-mcp-request`
-载 `{ arguments }`(url/return_format/no_cache/timeout)。
+可观测:rc.6 无会话事件审计(读路径拒读未知事件类型,自定义事件毒化
+日志 —— 见搜索孪生 README 同节说明)。
 
 响应映射:reader 双重编码文档 `{title, url, content, metadata,
 external}` → seam `WebFetchResult` `{url, statusCode: 200, body:
